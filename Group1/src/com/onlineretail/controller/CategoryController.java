@@ -39,7 +39,7 @@ public class CategoryController  {
 	
 	
 
-	@RequestMapping(value="/addCategory",method=RequestMethod.GET)
+	@RequestMapping(value="/addCategory",method=RequestMethod.GET) //
 	public  String addCategory(Model model){
 		model.addAttribute("cust", new Category());
 		return "Add";
@@ -47,8 +47,8 @@ public class CategoryController  {
 	
 	@RequestMapping(value="/viewCategory",method=RequestMethod.GET)
 	public  String viewCategory(Model model){
-		List<Category> cat=categoryservice.viewCategory();
-		model.addAttribute("catList", cat);
+		List<Category> cat=categoryservice.viewCategory();//viewCategory is returning a list of cat.
+		model.addAttribute("catList", cat); //saving cat as an attribute to catlist 
 		return "viewCategory";
 	}
 	
@@ -92,7 +92,7 @@ cat.setCategoryName(catname);
 	}
 	
 	@RequestMapping(value="/updateDetails",method=RequestMethod.GET)
-	public  String updateCategory2(@RequestParam("cid") Integer catId,Model model){
+	public  String updateCategory2(@RequestParam("cid") Integer catId,Model model){//we have passed cid as an parameter in updateDetails
 		model.addAttribute("cust", new Category());
       
 		model.addAttribute("cid", catId);
@@ -101,10 +101,11 @@ cat.setCategoryName(catname);
 	
 
 	@RequestMapping(value="/addCategory",method=RequestMethod.POST)
-	public  String addCategory(@ModelAttribute("category") Category cust,BindingResult result,
+	public  String addCategory(@ModelAttribute("category") Category cust,BindingResult result,//@model attribute means map the object so obtained to attribute "category
+				   "
 			Model model)
 	{
-	
+		//session.<% %>
 		if(categoryservice.AddCategory(cust)){
 			model.addAttribute("cust", cust);
 			model.addAttribute("msg", "Category Added");
