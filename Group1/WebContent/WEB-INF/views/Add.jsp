@@ -50,7 +50,7 @@ color="white";
 			<table style="width:30%;height:150px;" align="center">
 				<tr>
 					<td class="style1">ID:</td>
-					<td align="left"><td><sf:input path="categoryId"/></td>
+					<td align="left"><td><sf:input path="categoryId"/></td>// maps to the "categoryID" of model class
 				</tr>
 				<tr>
 					<td class="style1">Name:</td>
