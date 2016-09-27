@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>${msg}</h1>
+<h2>${cust.getId}</h2>
 
 </body>
 </html>
