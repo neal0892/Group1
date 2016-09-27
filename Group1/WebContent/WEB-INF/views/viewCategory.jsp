@@ -54,7 +54,7 @@ color: 'white';
 
 </tr></thead>
 			<tbody>
-		<c:forEach items="${catList}" var="category">
+		<c:forEach items="${catList}" var="category">//category is just a variable name 
 				<tr>
 					 <td><c:out value="${category.getCategoryId()}" /></td>
 			    	 <td><c:out value="${category.getCategoryName()}" /></td>
